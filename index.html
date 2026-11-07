@@ -3,87 +3,98 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Michael Ogungbemi | Healthtech Business Analyst</title>
-<meta name="description" content="Healthtech business analyst turning clinical and operational needs into clear requirements, workflows and delivered software.">
+<!-- EDIT: this is the site name shown in the browser tab and Google results -->
+<title>Michael Ogungbemi · Healthtech Business Analyst</title>
+<meta name="description" content="Healthtech business analyst: requirements gathering, stakeholder management, SQL, Excel and Power BI.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --ink:#12303a; --muted:#4d6670; --teal:#0e7c86; --teal-dark:#0a5c64;
-  --wash:#e6f2f1; --paper:#f7fafa; --line:#c9dcdc; --amber:#b7791f; --card:#fff;
-}
-@media (prefers-color-scheme:dark){
-  :root{--ink:#e6f1f2; --muted:#9bb5ba; --teal:#4cc3cd; --teal-dark:#7fd9e0;
-        --wash:#14313a; --paper:#0d2128; --line:#254852; --amber:#e0a84a; --card:#12303a;}
-}
+:root{--ink:#12303a;--muted:#4d6670;--teal:#0e7c86;--teal-dark:#0a5c64;--wash:#e6f2f1;--paper:#f7fafa;--line:#c9dcdc;--amber:#b7791f;--card:#fff}
+@media (prefers-color-scheme:dark){:root{--ink:#e6f1f2;--muted:#9bb5ba;--teal:#4cc3cd;--teal-dark:#7fd9e0;--wash:#14313a;--paper:#0d2128;--line:#254852;--amber:#e0a84a;--card:#12303a}}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font:400 1.0625rem/1.65 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-  color:var(--ink);background:var(--paper)}
+body{margin:0;font:400 1.0625rem/1.65 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--paper)}
 h1,h2,h3{font-family:"IBM Plex Serif",Georgia,"Times New Roman",serif;line-height:1.2;margin:0 0 .6em}
-h1{font-size:clamp(2rem,5.5vw,3.4rem);font-weight:600;letter-spacing:-.01em}
+h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:600;letter-spacing:-.01em}
 h2{font-size:clamp(1.5rem,3.5vw,2rem);font-weight:600}
-h3{font-size:1.2rem;font-weight:600}
+h3{font-size:1.15rem;font-weight:600}
 p{margin:0 0 1em;max-width:68ch}
 a{color:var(--teal-dark)}
-a:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
-.wrap{max-width:1000px;margin:0 auto;padding:0 1.25rem}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.25rem}
 nav{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding-top:.8rem;padding-bottom:.8rem}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:.6rem 1.2rem;flex-wrap:wrap;padding-top:.8rem;padding-bottom:.8rem}
 nav strong{font-weight:600}
-nav ul{display:flex;gap:1.2rem;list-style:none;margin:0;padding:0}
+nav ul{display:flex;gap:1.1rem;list-style:none;margin:0;padding:0;flex-wrap:wrap}
 nav a{text-decoration:none;color:var(--muted);font-weight:500}
 nav a:hover{color:var(--teal-dark)}
 section{padding:3.5rem 0;border-bottom:1px solid var(--line)}
-.hero{padding:4rem 0 3rem}
-.role{color:var(--teal-dark);font-weight:600;margin-bottom:1rem}
-.lede{font-size:1.2rem;color:var(--muted)}
-.btns{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.5rem}
-.btn{display:inline-block;padding:.7rem 1.3rem;border-radius:6px;border:2px solid var(--teal);
-  text-decoration:none;font-weight:600;color:var(--teal-dark)}
+.kicker{color:var(--teal-dark);font-weight:600;margin-bottom:.5rem}
+.lede{font-size:1.15rem;color:var(--muted)}
+.hero{padding:3.5rem 0}
+.hero .wrap{display:grid;gap:2.5rem;grid-template-columns:1.4fr 1fr;align-items:center}
+@media (max-width:760px){.hero .wrap{grid-template-columns:1fr}}
+.pills,.tags{display:flex;flex-wrap:wrap;gap:.4rem;padding:0;list-style:none;margin:1rem 0 0}
+.pills li,.tags li{background:var(--wash);border-radius:99px;padding:.15rem .75rem;font-size:.88rem}
+.btns{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.4rem}
+.btn{display:inline-block;padding:.7rem 1.3rem;border-radius:6px;border:2px solid var(--teal);text-decoration:none;font:inherit;font-weight:600;color:var(--teal-dark);background:transparent;cursor:pointer}
 .btn.primary{background:var(--teal);color:#fff}
 @media (prefers-color-scheme:dark){.btn.primary{color:#06232a}}
-/* the memorable element: a referral workflow */
-.flow{margin-top:2.5rem;background:var(--wash);border:1px solid var(--line);border-radius:10px;padding:1.2rem}
-.flow-title{font-weight:600;margin:0 0 .8rem;font-size:.95rem;color:var(--muted)}
-.steps{display:flex;gap:.6rem;list-style:none;margin:0;padding:0;overflow-x:auto}
-.steps li{flex:1 0 140px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:.7rem .8rem;font-size:.92rem;position:relative}
-.steps li b{display:block;color:var(--teal-dark);font-size:.95rem}
-.steps li.gap{border:2px dashed var(--amber)}
-.steps li.gap b{color:var(--amber)}
-.flow-note{font-size:.88rem;color:var(--muted);margin:.8rem 0 0}
-.grid{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.case{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1.4rem}
-.case dl{margin:0}
-.case dt{font-weight:600;color:var(--teal-dark);margin-top:.8rem}
-.case dd{margin:.15rem 0 0;color:var(--muted)}
-.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem;padding:0;list-style:none}
-.tags li{background:var(--wash);border-radius:99px;padding:.15rem .7rem;font-size:.85rem}
-.skills{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
-.skills ul{margin:0;padding-left:1.1rem;color:var(--muted)}
+/* profile image slot */
+.portrait{margin:0;justify-self:center;text-align:center}
+.photo{width:min(300px,70vw);aspect-ratio:1;border-radius:50%;border:4px solid var(--teal);background:var(--wash);position:relative;overflow:hidden;display:grid;place-items:center}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.photo .initials{font:600 4rem "IBM Plex Serif",Georgia,serif;color:var(--teal-dark)}
+.portrait figcaption{margin-top:.8rem;color:var(--muted);font-size:.92rem}
+.stats{display:flex;gap:2rem;margin-top:1.6rem;flex-wrap:wrap}
+.stats b{display:block;font:600 1.8rem "IBM Plex Serif",Georgia,serif;color:var(--teal-dark)}
+.stats span{color:var(--muted);font-size:.92rem}
+.grid{display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1.3rem}
+.card p{color:var(--muted);margin:0}
+.icon{font-size:1.6rem;display:block;margin-bottom:.4rem}
+.skills{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.skills ul,.list{margin:0;padding-left:1.1rem;color:var(--muted)}
 .jobs{list-style:none;margin:0;padding:0}
-.jobs li{padding:1rem 0;border-top:1px solid var(--line)}
+.jobs li{padding:1.2rem 0;border-top:1px solid var(--line)}
 .jobs li:first-child{border-top:0}
-.jobs span{color:var(--muted);font-size:.95rem}
-form{display:grid;gap:.9rem;max-width:520px}
+.jobs .meta{color:var(--muted);font-size:.95rem;display:block;margin-bottom:.5rem}
+/* project cards */
+button.project{all:unset;box-sizing:border-box;cursor:pointer;display:block;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1.3rem}
+button.project:hover{border-color:var(--teal)}
+button.project:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.project small{color:var(--teal-dark);font-weight:600}
+.project p{color:var(--muted);margin:.4rem 0 .8rem}
+.project .more{font-weight:600;color:var(--teal-dark)}
+dialog{max-width:560px;width:calc(100% - 2rem);border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);padding:1.6rem}
+dialog::backdrop{background:rgba(5,25,30,.6)}
+dialog dt{font-weight:600;color:var(--teal-dark);margin-top:.9rem}
+dialog dd{margin:.15rem 0 0;color:var(--muted)}
+.approach{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));list-style:none;padding:0;margin:0;counter-reset:s}
+.approach li{counter-increment:s;background:var(--wash);border-radius:10px;padding:1.1rem}
+.approach li::before{content:"Step " counter(s);display:block;font-weight:600;color:var(--amber);font-size:.9rem}
+.contact{display:grid;gap:2.5rem;grid-template-columns:1fr 1fr}
+@media (max-width:760px){.contact{grid-template-columns:1fr}}
+.links{display:grid;gap:.6rem;margin:1.2rem 0;justify-items:start}
+.links a{font-weight:600}
+form{display:grid;gap:.9rem}
 label{font-weight:500;display:grid;gap:.3rem}
 input,textarea{font:inherit;padding:.65rem .8rem;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink)}
 footer{padding:2rem 0;color:var(--muted);font-size:.92rem}
-@media (max-width:560px){nav ul{gap:.9rem}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
-<body>
+<body id="top">
 
 <nav aria-label="Main">
   <div class="wrap">
     <strong>Michael Ogungbemi</strong>
     <ul>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
+      <li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li>
+      <li><a href="#expertise">Expertise</a></li><li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li><li><a href="#credentials">Credentials</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -91,113 +102,177 @@ footer{padding:2rem 0;color:var(--muted);font-size:.92rem}
 
 <header class="hero">
   <div class="wrap">
-    <p class="role">Healthtech business analyst</p>
-    <h1>I turn clinical and operational needs into requirements teams can build.</h1>
-    <p class="lede">I work between clinicians, product owners and developers, so that software for patient care is clear, safe to release and used as intended.</p>
-    <div class="btns">
-      <a class="btn primary" href="#work">See my work</a>
-      <a class="btn" href="#contact">Get in touch</a>
+    <div>
+      <p class="kicker">Healthtech business analyst</p>
+      <h1>I turn what healthcare teams need into requirements, data and results.</h1>
+      <p class="lede">[One or two sentences: your years of experience, your background, and what you help teams achieve.]</p>
+      <ul class="pills"><li>Business analysis</li><li>Project management</li><li>Data analytics</li><li>Healthcare</li></ul>
+      <div class="btns"><a class="btn primary" href="#projects">View my work</a><a class="btn" href="#contact">Get in touch</a></div>
+      <div class="stats">
+        <div><b>[0]+</b><span>Years of experience</span></div>
+        <div><b>5</b><span>Projects</span></div>
+      </div>
     </div>
 
-    <div class="flow" role="group" aria-label="Example patient referral workflow">
-      <p class="flow-title">Example: mapping a patient referral to find where work gets stuck</p>
-      <ol class="steps">
-        <li><b>GP refers</b>Referral sent</li>
-        <li><b>Triage</b>Clinician reviews</li>
-        <li class="gap"><b>Missing info</b>Back to GP by phone</li>
-        <li><b>Booking</b>Appointment set</li>
-        <li><b>Visit</b>Record updated</li>
-      </ol>
-      <p class="flow-note">The dashed step is the kind of gap I look for, then turn into a requirement and a test.</p>
-    </div>
+    <!-- PROFILE IMAGE: save your photo as profile.jpg in the same folder as index.html.
+         Until then, your initials show instead. -->
+    <figure class="portrait">
+      <div class="photo">
+        <span class="initials" aria-hidden="true">MO</span>
+        <img src="profile.jpg" alt="Portrait of Michael Ogungbemi" onerror="this.remove()">
+      </div>
+      <figcaption>Michael Ogungbemi, Healthtech Business Analyst</figcaption>
+    </figure>
   </div>
 </header>
 
 <main>
-<section id="about">
-  <div class="wrap">
-    <h2>About</h2>
-    <p>I am a business analyst focused on healthcare technology. I run discovery with clinical and admin teams, map current workflows, write user stories with clear acceptance criteria, and support testing through to go-live.</p>
-    <p>[Add 1 or 2 sentences about your background, for example your degree, certifications, and what drew you to healthtech.]</p>
+<section id="about"><div class="wrap">
+  <p class="kicker">About me</p>
+  <h2>Healthcare knowledge meets business analysis</h2>
+  <p>[Who you are, where you are based, and the healthcare or business settings you have worked in.]</p>
+  <p>[How you gather requirements, manage delivery and analyse data with SQL, Excel and Power BI.]</p>
+  <div class="grid">
+    <div class="card"><h3>Business analysis</h3><p>Requirements, stakeholders and process improvement for healthcare and business teams.</p></div>
+    <div class="card"><h3>Project management</h3><p>Planning, tracking and delivering work with clear ownership.</p></div>
+    <div class="card"><h3>Data analytics</h3><p>SQL, Excel and Power BI turned into dashboards and recommendations.</p></div>
   </div>
-</section>
+</div></section>
 
-<section id="work">
-  <div class="wrap">
-    <h2>Selected work</h2>
-    <p>Replace the bracketed text with your real projects. Keep patient and employer details anonymous.</p>
-    <div class="grid">
-      <article class="case">
-        <h3>[Patient referral and triage system]</h3>
-        <dl>
-          <dt>Problem</dt><dd>[What was slow, risky or unclear for staff and patients.]</dd>
-          <dt>What I did</dt><dd>[Stakeholder interviews, as-is and to-be process maps, user stories, UAT.]</dd>
-          <dt>Result</dt><dd>[A measurable outcome, such as fewer rejected referrals or shorter wait to triage.]</dd>
-        </dl>
-        <ul class="tags"><li>Process mapping</li><li>User stories</li><li>UAT</li></ul>
-      </article>
-      <article class="case">
-        <h3>[EHR or patient records integration]</h3>
-        <dl>
-          <dt>Problem</dt><dd>[Data sat in separate systems or was entered twice.]</dd>
-          <dt>What I did</dt><dd>[Data mapping, interface requirements, FHIR or HL7 field analysis.]</dd>
-          <dt>Result</dt><dd>[Outcome and who benefited.]</dd>
-        </dl>
-        <ul class="tags"><li>HL7 / FHIR</li><li>Data mapping</li><li>Requirements</li></ul>
-      </article>
-      <article class="case">
-        <h3>[Reporting dashboard for a clinical team]</h3>
-        <dl>
-          <dt>Problem</dt><dd>[Managers lacked timely numbers on activity or waiting times.]</dd>
-          <dt>What I did</dt><dd>[Defined KPIs, wrote data requirements, validated with SQL and Power BI.]</dd>
-          <dt>Result</dt><dd>[Outcome and decisions it supported.]</dd>
-        </dl>
-        <ul class="tags"><li>SQL</li><li>Power BI</li><li>KPIs</li></ul>
-      </article>
+<section id="skills"><div class="wrap">
+  <p class="kicker">Skills</p>
+  <h2>What I bring to a team</h2>
+  <div class="skills">
+    <div><h3>Business analysis</h3><ul><li>Requirements gathering</li><li>Stakeholder management</li><li>Process improvement</li><li>Business intelligence</li></ul></div>
+    <div><h3>Project management</h3><ul><li>Project planning</li><li>Jira</li><li>Progress reporting</li><li>Team coordination</li></ul></div>
+    <div><h3>Data analytics</h3><ul><li>SQL</li><li>Microsoft Excel</li><li>Power BI</li><li>Power Query</li><li>Data modelling</li></ul></div>
+    <div><h3>Reporting</h3><ul><li>Dashboards</li><li>Data visualisation</li><li>PowerPoint</li><li>Executive summaries</li></ul></div>
+  </div>
+  <p style="margin-top:1.4rem;color:var(--muted)">Remove anything you cannot speak to in an interview.</p>
+</div></section>
+
+<section id="expertise"><div class="wrap">
+  <p class="kicker">Expertise</p>
+  <h2>How I help healthtech and healthcare teams</h2>
+  <div class="grid">
+    <div class="card"><span class="icon">📝</span><h3>Requirements and stakeholders</h3><p>Discovery with clinical and business stakeholders, turned into clear, testable requirements.</p></div>
+    <div class="card"><span class="icon">🗂️</span><h3>Project delivery</h3><p>Plan work, track tasks in Jira and report progress without surprises.</p></div>
+    <div class="card"><span class="icon">🗄️</span><h3>SQL and data modelling</h3><p>Query and structure healthcare data so reports are reliable and repeatable.</p></div>
+    <div class="card"><span class="icon">📈</span><h3>Dashboards and BI</h3><p>Excel and Power BI dashboards that busy teams can read in a minute.</p></div>
+    <div class="card"><span class="icon">🔄</span><h3>Process improvement</h3><p>Find where a service loses time or patients, and recommend practical fixes.</p></div>
+    <div class="card"><span class="icon">🛡️</span><h3>Confidential data handling</h3><p>Care with patient and client information, in line with privacy rules.</p></div>
+  </div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <p class="kicker">Experience</p>
+  <h2>Where I have worked</h2>
+  <ul class="jobs">
+    <li><h3>[Job title or project area]</h3><span class="meta">[Organisation or setting] · [Location] · [Years]</span><p>[What you did and delivered, in one or two sentences.]</p>
+      <ul class="tags"><li>[Skill]</li><li>[Skill]</li><li>[Skill]</li></ul></li>
+    <li><h3>[Job title]</h3><span class="meta">[Organisation] · [Location] · [Years]</span><p>[What you did and delivered.]</p>
+      <ul class="tags"><li>[Skill]</li><li>[Skill]</li></ul></li>
+  </ul>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <p class="kicker">Projects</p>
+  <h2>Analysis that led to action</h2>
+  <p style="color:var(--muted)">Select a card to read the summary. Add your own findings to each one, and delete any project you did not complete.</p>
+  <div class="grid">
+    <button class="project" data-open="p1"><small>Healthcare · Microsoft Excel</small><h3>Patient appointment no-show analysis</h3><p>Why patients miss appointments across clinic branches and specialties.</p><span class="more">Read summary</span></button>
+    <button class="project" data-open="p2"><small>Hospitality · Microsoft Excel</small><h3>Sunshine Resort customer analysis</h3><p>Understanding customer churn among international guests.</p><span class="more">Read summary</span></button>
+    <button class="project" data-open="p3"><small>Banking · SQL</small><h3>Bank fraud detection analysis</h3><p>Finding why a bank's fraud alerts were missing real cases.</p><span class="more">Read summary</span></button>
+    <button class="project" data-open="p4"><small>Retail · Business analysis</small><h3>Kardia Stores customer behaviour</h3><p>Customer buying patterns and product recommendations.</p><span class="more">Read summary</span></button>
+    <button class="project" data-open="p5"><small>Public health · SQL · PowerPoint</small><h3>Immunisation data presentation</h3><p>SQL results on an immunisation dataset, presented as slides.</p><span class="more">Read summary</span></button>
+  </div>
+</div></section>
+
+<section id="credentials"><div class="wrap">
+  <p class="kicker">Credentials</p>
+  <h2>Qualifications and certifications</h2>
+  <div class="grid">
+    <div class="card"><span class="icon">📊</span><h3>[Business analysis training]</h3><p>[Provider, year]</p></div>
+    <div class="card"><span class="icon">🎓</span><h3>[Degree or diploma]</h3><p>[Institution, year]</p></div>
+    <div class="card"><span class="icon">📘</span><h3>[Certification]</h3><p>[Provider, year]</p></div>
+  </div>
+  <p style="margin-top:1.2rem;color:var(--muted)">List only credentials you hold. Employers often verify them.</p>
+</div></section>
+
+<section><div class="wrap">
+  <p class="kicker">My approach</p>
+  <h2>How I deliver a project</h2>
+  <ol class="approach">
+    <li><h3>Discover</h3><p>Agree the problem, the stakeholders and what success looks like.</p></li>
+    <li><h3>Analyse</h3><p>Clean and model the data, then look for the patterns that matter.</p></li>
+    <li><h3>Deliver</h3><p>Plan the work, track progress and build dashboards and reports.</p></li>
+    <li><h3>Recommend</h3><p>Finish with clear next steps in plain English, then measure the result.</p></li>
+  </ol>
+</div></section>
+
+<section id="contact"><div class="wrap contact">
+  <div>
+    <p class="kicker">Contact</p>
+    <h2>Let's work together</h2>
+    <p>Hiring a healthtech business analyst, or have a project in mind? Send a message and I will reply as soon as I can.</p>
+    <div class="links">
+      <!-- EDIT: replace both with your own details -->
+      <a href="mailto:your.email@example.com">✉ your.email@example.com</a>
+      <a href="tel:+000000000000">☎ +00 0000 000000</a>
+      <a href="https://github.com/michealoguns7">GitHub</a>
+      <a href="https://www.linkedin.com/in/your-profile">LinkedIn</a>
     </div>
   </div>
-</section>
-
-<section id="skills">
-  <div class="wrap">
-    <h2>Skills</h2>
-    <div class="skills">
-      <div><h3>Analysis</h3><ul><li>Stakeholder interviews and workshops</li><li>As-is and to-be process mapping (BPMN)</li><li>User stories and acceptance criteria</li><li>Gap analysis and traceability</li></ul></div>
-      <div><h3>Healthcare knowledge</h3><ul><li>Clinical workflows and patient pathways</li><li>HL7 and FHIR basics</li><li>Data privacy: HIPAA, GDPR, NDPA</li><li>Clinical safety awareness</li></ul></div>
-      <div><h3>Tools</h3><ul><li>Jira and Confluence</li><li>SQL and Power BI</li><li>Figma wireframes</li><li>Agile and Scrum delivery</li></ul></div>
-    </div>
-    <p style="margin-top:1.5rem">Edit this list so it only shows what you can speak to in an interview.</p>
-  </div>
-</section>
-
-<section id="experience">
-  <div class="wrap">
-    <h2>Experience</h2>
-    <ul class="jobs">
-      <li><h3>[Job title]</h3><span>[Organisation] · [Start year] to [End year or present]</span><p>[One line on scope, team size and the main thing you delivered.]</p></li>
-      <li><h3>[Job title]</h3><span>[Organisation] · [Start year] to [End year]</span><p>[One line on scope and delivery.]</p></li>
-      <li><h3>[Education or certification]</h3><span>[Institution] · [Year]</span><p>[For example CBAP, PSM I, or a healthcare informatics course.]</p></li>
-    </ul>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="wrap">
-    <h2>Get in touch</h2>
-    <p>Open to healthtech business analyst roles and projects. Email me at <a href="mailto:you@example.com">you@example.com</a> or find me on <a href="https://www.linkedin.com/in/your-profile">LinkedIn</a>.</p>
-    <form action="https://formspree.io/f/your-form-id" method="post">
-      <label>Name<input type="text" name="name" required autocomplete="name"></label>
-      <label>Email<input type="email" name="email" required autocomplete="email"></label>
-      <label>Message<textarea name="message" rows="4" required></textarea></label>
-      <button class="btn primary" type="submit">Send message</button>
-    </form>
-  </div>
-</section>
+  <!-- EDIT: create a free form at formspree.io and paste your form ID here -->
+  <form action="https://formspree.io/f/your-form-id" method="post">
+    <label>Your name<input type="text" name="name" required autocomplete="name"></label>
+    <label>Your email<input type="email" name="email" required autocomplete="email"></label>
+    <label>Subject<input type="text" name="subject"></label>
+    <label>Message<textarea name="message" rows="4" required></textarea></label>
+    <button class="btn primary" type="submit">Send message</button>
+  </form>
+</div></section>
 </main>
 
-<footer>
-  <div class="wrap">&copy; <span id="y">2026</span> Michael Ogungbemi</div>
-</footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+<footer><div class="wrap">&copy; <span id="y">2026</span> Michael Ogungbemi · Healthtech Business Analyst · [City, Country]</div></footer>
+
+<!-- Project summaries: replace the brackets with your own work -->
+<dialog id="p1"><h3>Patient appointment no-show analysis</h3><dl>
+  <dt>Question</dt><dd>[Why do patients miss appointments, and where is it worst?]</dd>
+  <dt>Data and method</dt><dd>[Dataset, cleaning steps, Excel pivots or formulas.]</dd>
+  <dt>Findings</dt><dd>[Your real numbers and patterns.]</dd>
+  <dt>Recommendation</dt><dd>[What you advised the clinic to do.]</dd></dl>
+  <div class="btns"><button class="btn" data-close>Close</button></div></dialog>
+<dialog id="p2"><h3>Sunshine Resort customer analysis</h3><dl>
+  <dt>Question</dt><dd>[What was driving customer churn?]</dd>
+  <dt>Data and method</dt><dd>[Dataset and Excel approach.]</dd>
+  <dt>Findings</dt><dd>[Your real findings.]</dd>
+  <dt>Recommendation</dt><dd>[Your recommendations and expected effect.]</dd></dl>
+  <div class="btns"><button class="btn" data-close>Close</button></div></dialog>
+<dialog id="p3"><h3>Bank fraud detection analysis</h3><dl>
+  <dt>Question</dt><dd>[Why were fraud alerts missing real cases?]</dd>
+  <dt>Data and method</dt><dd>[Tables used and the SQL you wrote.]</dd>
+  <dt>Findings</dt><dd>[Your real findings.]</dd>
+  <dt>Recommendation</dt><dd>[Changes you proposed to the alert rules.]</dd></dl>
+  <div class="btns"><button class="btn" data-close>Close</button></div></dialog>
+<dialog id="p4"><h3>Kardia Stores customer behaviour</h3><dl>
+  <dt>Question</dt><dd>[Which customers buy what, and what should be recommended?]</dd>
+  <dt>Data and method</dt><dd>[Dataset and analysis approach.]</dd>
+  <dt>Findings</dt><dd>[Your real findings.]</dd>
+  <dt>Recommendation</dt><dd>[Your recommendations.]</dd></dl>
+  <div class="btns"><button class="btn" data-close>Close</button></div></dialog>
+<dialog id="p5"><h3>Immunisation data presentation</h3><dl>
+  <dt>Question</dt><dd>[What does the immunisation data show?]</dd>
+  <dt>Data and method</dt><dd>[Dataset and SQL queries.]</dd>
+  <dt>Findings</dt><dd>[Your real findings.]</dd>
+  <dt>Recommendation</dt><dd>[What you presented and to whom.]</dd></dl>
+  <div class="btns"><button class="btn" data-close>Close</button></div></dialog>
+
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+document.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>document.getElementById(b.dataset.open).showModal()));
+document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>b.closest('dialog').close()));
+document.querySelectorAll('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d)d.close()}));
+</script>
 </body>
 </html>

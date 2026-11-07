@@ -80,8 +80,11 @@ nav .brand{color:#fff;font-weight:800;text-decoration:none;white-space:nowrap}
 .skillgrid ul{margin:0;padding:0;list-style:none}
 .skillgrid li{padding:.35rem 0;border-bottom:1px dashed var(--line);color:var(--muted)}
 .timeline{list-style:none;margin:2rem 0 0;padding:0 0 0 1.5rem;border-left:3px solid var(--line)}
-.timeline li{position:relative;padding:0 0 2rem 1rem}
-.timeline li::before{content:"";position:absolute;left:calc(-1.5rem - 9px);top:.3rem;width:15px;height:15px;border-radius:50%;background:var(--gold);border:3px solid var(--blue)}
+.timeline>li{position:relative;padding:0 0 2rem 1rem}
+.timeline>li::before{content:"";position:absolute;left:calc(-1.5rem - 9px);top:.3rem;width:15px;height:15px;border-radius:50%;background:var(--gold);border:3px solid var(--blue)}
+.timeline .org{display:block;color:var(--blue);font-weight:700;margin:-.3rem 0 .1rem}
+.timeline .bul{margin:.5rem 0 0;padding-left:1.2rem;color:var(--muted)}
+.timeline .bul li{padding:.2rem 0}
 .timeline .meta{display:block;color:var(--muted);font-size:.92rem;margin-bottom:.4rem}
 button.project{all:unset;box-sizing:border-box;cursor:pointer;display:block;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.4rem;box-shadow:var(--shadow);transition:transform .25s,border-color .25s}
 button.project:hover{transform:translateY(-5px);border-color:var(--blue)}
@@ -210,10 +213,24 @@ footer{background:var(--navy);color:#c9d5ff;padding:2rem 0 5rem;font-size:.92rem
   <p class="kicker">Experience</p>
   <h2>Where I have worked</h2>
   <ul class="timeline">
-    <li><h3>Team Lead, Health and Social Care</h3><span class="meta">[Organisation] · [Location] · [Start year] to present</span><p class="sub">[Your team size, services you led, and one result you delivered.]</p>
-      <ul class="chips"><li>Team leadership</li><li>Supported living</li><li>Service delivery</li></ul></li>
-    <li><h3>HealthTech Business Analyst</h3><span class="meta">[Organisation or project area] · [Years]</span><p class="sub">[Analysis and improvement work you delivered.]</p>
-      <ul class="chips"><li>Requirements</li><li>SQL</li><li>Power BI</li></ul></li>
+    <li><h3>Team Lead</h3><span class="org">Community Living Limited</span><span class="meta">March 2026 – Present · London</span>
+      <ul class="bul">
+        <li>Lead and support a team of support workers to deliver person-centred care to individuals with learning disabilities and complex needs.</li>
+        <li>Coordinate care plans, risk assessments and daily support records in line with CQC standards and internal policies.</li>
+        <li>Drive process improvement and workflow optimisation, using data and digital tools to improve service quality and compliance.</li>
+        <li>Plan activities and life-skills programmes that promote independence and community inclusion.</li>
+        <li>Act as a point of contact for colleagues, service users and families, keeping communication clear and records up to date.</li>
+      </ul></li>
+    <li><h3>Senior Care Assistant</h3><span class="org">Community Living Limited</span><span class="meta">February 2025 – March 2026 · London</span>
+      <ul class="bul">
+        <li>Provided person-centred support to individuals with learning disabilities and complex needs.</li>
+        <li>Maintained care plans, risk assessments and daily support records in line with CQC standards and internal policies.</li>
+      </ul></li>
+    <li><h3>Team Lead</h3><span class="org">OH Prime Hospital</span><span class="meta">December 2021 – December 2024</span>
+      <ul class="bul">
+        <li>Supervised a team of support workers, maintaining high standards of care and [finish this line from your CV].</li>
+        <li>[Add the other bullet points for this role from your CV.]</li>
+      </ul></li>
   </ul>
 </div></section>
 
@@ -266,16 +283,18 @@ footer{background:var(--navy);color:#c9d5ff;padding:2rem 0 5rem;font-size:.92rem
       <a href="mailto:ogungbemimichaeltobi@gmail.com">✉ ogungbemimichaeltobi@gmail.com</a>
       <a href="tel:+447538941668">☎ +44 7538 941668</a>
       <a href="https://www.linkedin.com/in/michael-ogungbemi-72556271/" target="_blank" rel="noopener">in&nbsp; LinkedIn: Michael Ogungbemi</a>
-      <a href="https://github.com/michealoguns7" target="_blank" rel="noopener">⌥ GitHub</a>
+      <a href="https://github.com/michaelogungbemi" target="_blank" rel="noopener">⌥ GitHub</a>
     </div>
   </div>
-  <!-- EDIT: create a free form at formspree.io and paste your form ID in place of your-form-id -->
-  <form action="https://formspree.io/f/your-form-id" method="post">
+  <form id="cf" action="https://formspree.io/f/myeealkk" method="post">
+    <input type="hidden" name="_subject" value="New message from your portfolio">
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
     <label>Your name<input type="text" name="name" required autocomplete="name"></label>
     <label>Your email<input type="email" name="email" required autocomplete="email"></label>
     <label>Subject<input type="text" name="subject"></label>
     <label>Message<textarea name="message" rows="4" required></textarea></label>
     <button class="btn primary" type="submit">Send message</button>
+    <p id="fmsg" role="status" class="sub" style="margin:0"></p>
   </form>
 </div></section>
 </main>
@@ -348,6 +367,17 @@ function onScroll(){
   if(cur>-1&&links[cur].scrollIntoView){var l=links[cur],c=l.parentNode.parentNode;c.scrollLeft=l.offsetLeft-c.clientWidth/2+l.clientWidth/2}
 }
 window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+/* contact form: send to Formspree without leaving the page */
+var cf=document.getElementById('cf'),fm=document.getElementById('fmsg');
+cf.addEventListener('submit',function(e){
+  e.preventDefault();
+  if(cf.action.indexOf('your-form-id')>-1){fm.textContent='The form is not connected yet. Please email me directly.';return}
+  fm.textContent='Sending…';
+  fetch(cf.action,{method:'POST',body:new FormData(cf),headers:{Accept:'application/json'}})
+   .then(function(r){if(r.ok){cf.reset();fm.textContent='Thank you, your message has been sent.'}else{fm.textContent='Sorry, something went wrong. Please email me directly.'}})
+   .catch(function(){fm.textContent='Sorry, something went wrong. Please email me directly.'});
+});
 top.addEventListener('click',function(){window.scrollTo({top:0,behavior:reduce?'auto':'smooth'})});
 })();
 </script>
